@@ -14,7 +14,7 @@ steps:
 
     -   id: "Copiando .env"
         name: 'docker'
-        args: [ 'exec', '-t', 'app', 'composer', 'install' ]
+        args: [ 'exec', '-t', 'app', 'cp', '/var/www/.env.example', '/var/www/.env' ]
 
     -   id: "Executando key:generate"
         name: 'docker'
