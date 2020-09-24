@@ -10,7 +10,7 @@ services:
 #            - DB_DATABASE=laravel
 #            - DB_USERNAME=root
 #            - DB_PASSWORD=root
-        volumes: 
+        volumes:
             - .:/var/www
         networks:
             - app-network

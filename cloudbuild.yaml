@@ -1,25 +1,29 @@
 steps:
 
-- id: "Executando docker-compose"
-  name: 'docker/compose'
-  args: ['-f', 'docker-compose.cloudbuild.yaml', 'up', '-d']
+    -   id: "Executando docker-compose"
+        name: 'docker/compose'
+        args: [ '-f', 'docker-compose.cloudbuild.yaml', 'up', '-d' ]
 
-- id: "Executando composer"
-  name: 'docker'
-  args: ['exec', '-t', 'app', 'composer', 'install']
+    -   id: "Permissão em www"
+        name: 'docker'
+        args: [ 'exec','-u','root','-t','app','chown','-R','www-data:www-data','/var/www' ]
 
-- id: "Copiando .env"
-  name: 'docker'
-  args: ['exec', '-t', 'app', 'composer', 'install']
+    -   id: "Executando composer"
+        name: 'docker'
+        args: [ 'exec', '-t', 'app', 'composer', 'install' ]
 
-- id: "Executando key:generate"
-  name: 'docker'
-  args: ['exec', '-t', 'app', 'php', '/var/www/artisan', 'key:generate']
+    -   id: "Copiando .env"
+        name: 'docker'
+        args: [ 'exec', '-t', 'app', 'composer', 'install' ]
 
-- id: "Executando migrations"
-  name: 'docker'
-  args: ['exec', '-t', 'app', 'php', '/var/www/artisan', 'migrate']
+    -   id: "Executando key:generate"
+        name: 'docker'
+        args: [ 'exec', '-t', 'app', 'php', '/var/www/artisan', 'key:generate' ]
 
-- id: "Executando phpunit"
-  name: 'docker'
-  args: ['exec', '-t', 'app', 'php', '/var/www/vendor/bin/phpunit', '-t', '/var/www/phpunit.xml']
+    -   id: "Executando migrations"
+        name: 'docker'
+        args: [ 'exec', '-t', 'app', 'php', '/var/www/artisan', 'migrate' ]
+
+    -   id: "Executando phpunit"
+        name: 'docker'
+        args: [ 'exec', '-t', 'app', 'php', '/var/www/vendor/bin/phpunit', '-t', '/var/www/phpunit.xml' ]
