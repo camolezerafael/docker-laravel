@@ -22,4 +22,4 @@ steps:
 
 - id: "Executando phpunit"
   name: 'docker'
-  args: ['exec', '-t', 'app', 'php', '/var/www/vendor/bin/phpunit', '-t', '/var/www/phpunit.xml'] 
+  args: ['exec', '-t', 'app', 'php', '/var/www/vendor/bin/phpunit', '-t', '/var/www/phpunit.xml']
