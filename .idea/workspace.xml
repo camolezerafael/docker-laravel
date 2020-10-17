@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ea222065-d265-4f1a-a7a4-16637f87db92" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudbuild.prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cloudbuild.prod.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/app/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/app/deployment.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +168,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1602959480950</updated>
-      <workItem from="1602959482002" duration="8275000" />
+      <workItem from="1602959482002" duration="9387000" />
     </task>
     <servers />
   </component>
